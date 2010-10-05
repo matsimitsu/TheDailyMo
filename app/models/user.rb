@@ -13,7 +13,7 @@ class User
   field :first_name
   field :last_name
   field :gender
-  field :date_of_birth
+  field :date_of_birth, :type => Date
   field :mobile_number
 
   field :facebook_id
