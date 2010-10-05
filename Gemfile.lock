@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/adzap/validates_timeliness.git
+  revision: d450ab7c0652e049a8e6e11f8f5f121cbd1ab113
+  ref: d450ab7c0652e049a8e6
+  specs:
+    validates_timeliness (3.0.0.beta.4)
+
+GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 721843c841f0dc5391dac3b62c5e9cc966dba8d3
   ref: 721843c841f0dc5391da
@@ -46,6 +53,7 @@ GEM
     builder (2.1.2)
     cgi_multipart_eof_fix (2.5.0)
     daemons (1.1.0)
+    diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.4.6)
@@ -104,6 +112,19 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    rspec (2.0.0.beta.22)
+      rspec-core (= 2.0.0.beta.22)
+      rspec-expectations (= 2.0.0.beta.22)
+      rspec-mocks (= 2.0.0.beta.22)
+    rspec-core (2.0.0.beta.22)
+    rspec-expectations (2.0.0.beta.22)
+      diff-lcs (>= 1.1.2)
+    rspec-mocks (2.0.0.beta.22)
+      rspec-core (= 2.0.0.beta.22)
+      rspec-expectations (= 2.0.0.beta.22)
+    rspec-rails (2.0.0.beta.22)
+      rspec (= 2.0.0.beta.22)
+    shoulda (2.11.3)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -123,3 +144,6 @@ DEPENDENCIES
   mongoid (= 2.0.0.beta.19)
   mongrel
   rails (= 3.0.0)
+  rspec-rails (>= 2.0.0.beta.22)
+  shoulda
+  validates_timeliness!
