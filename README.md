@@ -45,9 +45,9 @@ This makes sure your other localhost cookies don't get mashed in the process.
 Extra links for FB Connection stuff
 -----------------------------------
 
-http://developers.facebook.com/docs/authentication/
-http://developers.facebook.com/docs/reference/javascript/
-http://developers.facebook.com/docs/authentication/javascript
-http://www.facebook.com/developers/apps.php?app_id=106266066102294&ret=2
-http://github.com/facebook
-http://github.com/facebook/connect-js
+  - http://developers.facebook.com/docs/authentication/
+  - http://developers.facebook.com/docs/reference/javascript/
+  - http://developers.facebook.com/docs/authentication/javascript
+  - http://www.facebook.com/developers/apps.php?app_id=106266066102294&ret=2
+  - http://github.com/facebook
+  - http://github.com/facebook/connect-js
