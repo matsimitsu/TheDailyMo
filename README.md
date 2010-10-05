@@ -41,6 +41,15 @@ It is also recommended that you add the following to your host file:
 This makes sure your other localhost cookies don't get mashed in the process.
 
 
+Some other info, mostly testing
+-------------------------------
+
+We are using both Cucumber with RSpec2 for a combination of unit testing and integration tests. RSpec is used for basic model unit tests and unit tests for complex functionality (map reduce stats). Cucumber is all about the website; public, users and admin.
+
+As well as RSpec, we also use Shoulda matchers, for more info on these matchers go to:
+
+    http://rdoc.info/gems/shoulda/2.11.3/Shoulda/ActiveRecord/Matchers
+
 
 Extra links for FB Connection stuff
 -----------------------------------
