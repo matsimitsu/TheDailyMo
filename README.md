@@ -1,26 +1,22 @@
-SnorVember - a 'frankenstein marriage' of facial hair
-=====================================================
+The Daily Mo - a little bit of mo lovin for all
+===============================================
 
-First there was Movember, but it really failed in terms of having a good website. Then came Snoranje, whos website rocked. The two of them got together and SnorVember was born.
+BLAH BLAH BLAH.
 
 The current project you see here is the very barebones skeleton of what will be the final product. So bare with me as we add Cucumber stories/features, a good testing workflow, and the start of the design and layout.
 
 On the agenda
 -------------
 
-  - Registrations
+  - Mo up your FB and Twitter profile pics
 
-  - Facebook integration
+  - Create a Daily Mo account
 
-  - Teams
-
-  - Donations
-
-  - Leaderboards and all that jazz
+  - Upload a Daily Mo pic
 
   - some Admin goodness
 
-  - and translations, translations, translations
+  - and maybe translations
 
 
 To get up and running
@@ -36,7 +32,7 @@ and you should be good to go.
 
 It is also recommended that you add the following to your host file:
 
-    snorvember.local
+    thedailymo.local
 
 This makes sure your other localhost cookies don't get mashed in the process.
 
