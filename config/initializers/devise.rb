@@ -126,13 +126,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists. Default is [:html]
   # config.navigational_formats = [:html, :iphone]
 
-  # ==> OAuth2
-  # Add a new OAuth2 provider. Check the README for more information on setting
-  # up on your models and hooks. By default this is not set.
-  config.oauth(:facebook, SnorVember::FACEBOOK_CLIENT_ID, SnorVember::FACEBOOK_CLIENT_SECRET, {
-    :site   => 'https://graph.facebook.com',
-    :scope  => %w(publish_stream user_about_me user_birthday user_location email)
-  })
+  config.omniauth :facebook, TheDailyMo::FACEBOOK_CLIENT_ID, TheDailyMo::FACEBOOK_CLIENT_SECRET
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not (yet) supported by Devise,

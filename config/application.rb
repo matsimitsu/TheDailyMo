@@ -7,7 +7,7 @@ require 'action_mailer/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
-module SnorVember
+module TheDailyMo
   class Application < Rails::Application
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)

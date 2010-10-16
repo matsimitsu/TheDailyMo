@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-SnorVember::Application.load_tasks
+TheDailyMo::Application.load_tasks

@@ -8,11 +8,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: snor_vember_development
+  database: the_daily_mo_development
 
 test:
   <<: *defaults
-  database: snor_vember_test
+  database: the_daily_mo_development
 
 # set these environment variables on your prod server
 production:
