@@ -82,6 +82,9 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mini_fb (1.1.3)
+      hashie
+      rest-client
     mongo (1.0.9)
       bson (>= 1.0.5)
     mongoid (2.0.0.beta.19)
@@ -168,6 +171,7 @@ DEPENDENCIES
   database_cleaner
   devise!
   fbgraph (= 0.1.6.4.1)
+  mini_fb
   mongoid (= 2.0.0.beta.19)
   mongrel
   oa-oauth

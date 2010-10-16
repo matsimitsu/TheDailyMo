@@ -17,6 +17,7 @@ gem 'sass'
 gem "compass", ">= 0.10.5"
 
 gem 'twitter'
+gem 'mini_fb'
 
 group :development do
   gem 'mongrel'
