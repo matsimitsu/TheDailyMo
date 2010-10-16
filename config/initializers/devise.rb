@@ -126,7 +126,8 @@ Devise.setup do |config|
   # should add them to the navigational formats lists. Default is [:html]
   # config.navigational_formats = [:html, :iphone]
 
-  config.omniauth :facebook, TheDailyMo::FACEBOOK_CLIENT_ID, TheDailyMo::FACEBOOK_CLIENT_SECRET
+  config.omniauth :facebook, *TheDailyMo::AuthKeys.network_keys_and_secret(:facebook)
+  config.omniauth :twitter,  *TheDailyMo::AuthKeys.network_keys_and_secret(:twitter)
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not (yet) supported by Devise,
