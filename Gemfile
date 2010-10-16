@@ -14,6 +14,7 @@ gem 'validates_timeliness', :git => 'git://github.com/adzap/validates_timeliness
 gem 'fbgraph', '0.1.6.4.1'
 
 gem 'sass'
+gem "compass", ">= 0.10.5"
 
 group :development do
   gem 'mongrel'

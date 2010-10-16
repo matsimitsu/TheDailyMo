@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SnorVember</title>
-  <%= stylesheet_link_tag :all %>
+  <title>The Daily MO</title>
+  <%= stylesheet_link_tag 'layout', 'screen' %>
+  <!--[if IE]><%= stylesheet_link_tag 'ie' %><![endif]-->
   <%= javascript_include_tag 'jquery', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header>
+    <h1><%= image_tag 'logo.png', :alt => 'The Daily MO' %></h1>
+    <nav>
+      <ul>
+        <li>MO growers</li>
+        <li>MO posers</li>
+        <li>Contact Us</li>
+        <li class='cta'>Login</li>
+      </ul>
+    </nav>
+    <hgroup>
+      <h1>Change the face of mens health</h1>
+      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</h2>
+    </hgroup>
+    <p>Only <time datetime="2010-11-01">15 days, 5 hrs, 2 midgets and 5 seconds</time> till Movember</p>
+  </header>
+
 
 <%= yield %>
 

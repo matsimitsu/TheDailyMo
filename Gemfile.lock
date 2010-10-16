@@ -53,6 +53,8 @@ GEM
     bson_ext (1.1)
     builder (2.1.2)
     cgi_multipart_eof_fix (2.5.0)
+    compass (0.10.5)
+      haml (>= 3.0.4)
     daemons (1.1.0)
     database_cleaner (0.5.2)
     diff-lcs (1.1.2)
@@ -68,6 +70,7 @@ GEM
       oauth2
       rest-client
     gem_plugin (0.2.3)
+    haml (3.0.21)
     hashie (0.4.0)
     i18n (0.4.1)
     json (1.4.6)
@@ -153,6 +156,7 @@ PLATFORMS
 DEPENDENCIES
   bson (= 1.1)
   bson_ext (= 1.1)
+  compass (>= 0.10.5)
   database_cleaner
   devise!
   fbgraph (= 0.1.6.4.1)
