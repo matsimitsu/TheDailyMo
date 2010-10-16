@@ -1,3 +1,29 @@
 @import "base";
 
-body > header hgroup { background: url('/images/header_banner.jpg') no-repeat; width: 980px; height: 321px; }
+body > header { background: url('/images/banner_pattern.png') repeat-x 50% 77px black;
+  p, h1, h2 { color: white; @include heading-fonts; @include text-shadow(hsla(0, 0, 0, 0.75), 0, 0, 13px); line-height: 1.2em; margin: 0; }
+  div { width: $page-width; margin: auto; position: relative;
+    > h1 { width: 474px; height: 125px; position: absolute; top: 16px; left: -4px;
+      img {display: block;} }
+    hgroup { background: url('/images/header_banner.jpg') no-repeat; height: 321px - 119px; padding: 119px 404px 0 $grid-margin;
+      h1 { font-size: 34px; }
+      h2 { font-size: 20px; }
+    }
+    nav { padding-top: 33px; height: 44px;
+      ul { width: 470px; margin-left: auto; background-color: $nav-gray; overflow: hidden; @include border-top-radius(4px);
+        li { display: block; float: left; height: 44px; line-height: 44px; }
+        li.cta { background-color: $golden-beige; }
+      }
+    }
+    .countdown { position: absolute; top: 350px; left: $grid-margin; font-size: 25px;
+      time { color: $golden-beige; }}
+  }
+}
+
+section {
+  h1, h2, p { margin-left: $grid-margin; }
+}
+
+body > footer {
+  li { display: inline; }
+}

@@ -1,0 +1,6 @@
+@import "base";
+
+h1, h2 { @include heading-fonts; }
+
+time { display: inline; }
+section { width: $page-width; margin: auto; padding-top: $section-top-padding; }

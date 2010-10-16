@@ -2,31 +2,51 @@
 <html>
 <head>
   <title>The Daily MO</title>
-  <%= stylesheet_link_tag 'layout', 'screen' %>
+  <%= stylesheet_link_tag 'layout', 'common_elements', 'screen' %>
   <!--[if IE]><%= stylesheet_link_tag 'ie' %><![endif]-->
   <%= javascript_include_tag 'jquery', 'application' %>
+  <script type="text/javascript" src="http://use.typekit.com/ore3opt.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <header>
-    <h1><%= image_tag 'logo.png', :alt => 'The Daily MO' %></h1>
-    <nav>
-      <ul>
-        <li>MO growers</li>
-        <li>MO posers</li>
-        <li>Contact Us</li>
-        <li class='cta'>Login</li>
-      </ul>
-    </nav>
-    <hgroup>
-      <h1>Change the face of mens health</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</h2>
-    </hgroup>
-    <p>Only <time datetime="2010-11-01">15 days, 5 hrs, 2 midgets and 5 seconds</time> till Movember</p>
+    <div><!-- added for styling -->
+      <h1><%= image_tag 'logo.png', :alt => 'The Daily MO' %></h1>
+      <nav>
+        <ul>
+          <li>MO growers</li>
+          <li>MO posers</li>
+          <li>Contact Us</li>
+          <li class='cta'>Login</li>
+        </ul>
+      </nav>
+      <hgroup>
+        <h1>Change the face of mens health</h1>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+      </hgroup>
+      <p class='countdown'>Only <time datetime="2010-11-01">15 days, 5 hrs and 2 midgets</time> till Movember</p>
+    </div>
   </header>
 
 
 <%= yield %>
 
+  <footer>
+    <nav>
+      <ul>
+        <li>About</li>
+        <li>Participants</li>
+        <li>Donate</li>
+        <li>News &amp; Events</li>
+        <li>Prizes</li>
+        <li>Partners &amp; Supporters</li>
+        <li>Login</li>
+        <li>Register</li>
+      </ul>
+    </nav>
+    <p>&copy; JIAC (Justin Is Awesome Corps) 2010</p>
+    <p>Follow us: twitter</p>
+  </footer>
 </body>
 </html>
