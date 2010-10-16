@@ -137,6 +137,7 @@ GEM
       rspec-expectations (= 2.0.0)
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
+    sass (3.1.0.alpha.18)
     shoulda (2.11.3)
     thor (0.14.3)
     treetop (1.4.8)
@@ -160,5 +161,6 @@ DEPENDENCIES
   oa-oauth
   rails (= 3.0.1)
   rspec-rails (~> 2.0.0)
+  sass
   shoulda
   validates_timeliness!
