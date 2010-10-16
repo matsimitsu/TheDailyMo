@@ -1,5 +1,13 @@
 TheDailyMo::Application.routes.draw do
+
   devise_for :users
+
+  resources :mo_posers
+
+  # The rack based omniauth is inserted before this.
+  match '/auth/failure'           => "auth#failure"
+  match '/auth/:service'          => "auth#:service", :as => "auth"
+  match '/auth/:service/callback' => "auth#callback", :as => "auth_callback"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +58,7 @@ TheDailyMo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
+  root :to => "mo_posers#index"
 
   # See how all your routes lay out with "rake routes"
 

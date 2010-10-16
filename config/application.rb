@@ -10,7 +10,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 module TheDailyMo
   class Application < Rails::Application
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

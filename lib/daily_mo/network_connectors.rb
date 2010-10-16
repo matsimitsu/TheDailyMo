@@ -5,7 +5,7 @@ module DailyMo
     def self.register_connector(network_name)
       @available_connectors[network_name] = "::DailyMo::NetworkConnectors::#{network_name.classify}Connector".constantize
       @network_list = nil
-      true
+      connector(network_name)
     end
 
     def self.registered_connector?(network_name)
@@ -27,5 +27,5 @@ module DailyMo
   end
 end
 
-require 'network_connectors/facebook_connector'
-require 'network_connectors/twitter_connector'
+require 'daily_mo/network_connectors/facebook_connector'
+require 'daily_mo/network_connectors/twitter_connector'

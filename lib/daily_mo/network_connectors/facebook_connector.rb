@@ -5,13 +5,13 @@ module DailyMo
       require 'mini_fb'
 
       def profile_picture_url
-        "https://graph.facebook.com/#{oauth_id}/picture?type=large"
+        "https://graph.facebook.com/#{oauth_uid}/picture?type=large"
       end
 
       def upload_profile_picture(message = default_message)
-        # oauth_id is default (public) profile album...
+        # oauth_uid is default (public) profile album...
         begin
-          c = Curl::Easy.new("https://graph.facebook.com/#{oauth_id}/photos")
+          c = Curl::Easy.new("https://graph.facebook.com/#{oauth_uid}/photos")
           c.multipart_form_post = true
           c.http_post(
             Curl::PostField.file("file", photos.last.photo.to_file.path),

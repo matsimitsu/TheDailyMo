@@ -1,15 +1,9 @@
-# oauth = Twitter::OAuth.new(TWITTER[:key], TWITTER[:secret])
-# oauth.authorize_from_access(TWITTER[account_type][:access_token], TWITTER[account_type][:access_secret])
-# 
-# tweeter = Twitter::Base.new(oauth)
-# if tweeter.update(string)
-
 module DailyMo
   module NetworkConnectors
     module TwitterConnector
 
       def profile_picture_url(big = true)
-        img_url = details['profile_image_url']
+        img_url = original_profile_pic_url
         img_url.gsub!(/http:\/\/.*\.twimg\.com\//, 'http://s3.amazonaws.com/twitter_production/')
         img_url.gsub!('_normal.', '.') if img_url =~ /_normal\./ && img_url !~ /static\.twitter/ && big
         img_url.gsub!('_bigger.', '.') if img_url =~ /_bigger\./ && img_url !~ /static\.twitter/ && big
@@ -48,7 +42,8 @@ module DailyMo
       end
 
       def post_message(message = nil)
-        reply = authenticate.update(message || default_message)
+        tweeter = Twitter::Base.new(authenticate)
+        reply = tweeter.update(message || default_message)
         self.message = reply["text"]
         self.message_link = "http://www.twitter.com/#{reply['user']['screen_name']}/status/#{reply['id']}"
         self.save!
@@ -56,19 +51,9 @@ module DailyMo
       end
 
       def authenticate
-        begin
-          oauth
-        rescue TwitterException => e
-          raise ArgumentError, "Sorry, TwitterException occured: #{e}"
-        end
-      end
-
-      def fill_details
-        update_attributes(
-          :name        => details['name'],
-          :nickname    => details['screen_name'],
-          :profile_url => "http://twitter.com/" + details['screen_name']
-        )
+        oauth = Twitter::OAuth.new(*TheDailyMo::AuthKeys.network_keys_and_secret(:twitter))
+        oauth.authorize_from_access(oauth_token, oauth_secret)
+        oauth
       end
 
       def needs_profile_confimation
@@ -77,25 +62,6 @@ module DailyMo
 
       def human_name
         "Twitter"
-      end
-
-    private
-
-      def details
-        @details ||= authenticate.info
-      end
-
-      def oauth
-        @oauth ||= TwitterOAuth::Client.new(
-          :consumer_key    => TWITTER[:key],
-          :consumer_secret => TWITTER[:secret],
-          :token           => oauth_access_token,
-          :secret          => oauth_secret_token
-        )
-      end
-
-      def consumer
-        @consumer ||= OAuth::Consumer.new(TWITTER[:key], TWITTER[:secret], {:site=>'http://twitter.com'} )
       end
 
     end
