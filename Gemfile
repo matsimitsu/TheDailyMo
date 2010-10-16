@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git', :ref => '721843c841f0dc5391da'
+gem 'devise',   :git => 'git://github.com/plataformatec/devise.git', :branch => 'omniauth'
+gem "oa-oauth", :require => "omniauth/oauth"
 
 gem 'mongoid',  '2.0.0.beta.19'
 gem 'bson',     '1.1'
