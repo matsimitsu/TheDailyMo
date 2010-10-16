@@ -6,8 +6,7 @@ class User
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable,
-         :trackable, :validatable,
-         :omniauthable
+         :trackable, :validatable #, :omniauthable
 
 
   field :first_name
