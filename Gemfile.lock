@@ -55,6 +55,7 @@ GEM
     cgi_multipart_eof_fix (2.5.0)
     compass (0.10.5)
       haml (>= 3.0.4)
+    crack (0.1.8)
     daemons (1.1.0)
     database_cleaner (0.5.2)
     diff-lcs (1.1.2)
@@ -72,6 +73,8 @@ GEM
     gem_plugin (0.2.3)
     haml (3.0.21)
     hashie (0.4.0)
+    httparty (0.6.1)
+      crack (= 0.1.8)
     i18n (0.4.1)
     json (1.4.6)
     mail (2.2.7)
@@ -145,6 +148,11 @@ GEM
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
+    twitter (0.9.12)
+      hashie (~> 0.4.0)
+      httparty (~> 0.6.1)
+      multi_json (~> 0.0.4)
+      oauth (~> 0.4.3)
     tzinfo (0.3.23)
     warden (1.0.1)
       rack (>= 1.0.0)
@@ -167,4 +175,5 @@ DEPENDENCIES
   rspec-rails (~> 2.0.0)
   sass
   shoulda
+  twitter
   validates_timeliness!
