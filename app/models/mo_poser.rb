@@ -10,6 +10,13 @@ class MoPoser
   field :original_profile_pic_url
   field :permissions, :type => Hash
 
+  field :photo_file_name
+  field :photo_content_type
+  field :photo_file_size
+  field :photo_updated_at, :type => DateTime
+
+  mount_uploader :photo, PhotoUploader
+
   # some general validations for the user profile
   validates_presence_of  :full_name, :original_profile_pic_url
 

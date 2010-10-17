@@ -52,6 +52,8 @@ GEM
     bson (1.1)
     bson_ext (1.1)
     builder (2.1.2)
+    carrierwave (0.5.0)
+      activesupport (~> 3.0.0)
     cgi_multipart_eof_fix (2.5.0)
     compass (0.10.5)
       haml (>= 3.0.4)
@@ -61,6 +63,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    excon (0.2.4)
     faraday (0.4.6)
       addressable (>= 2.1.1)
       rack (>= 1.0.1)
@@ -70,6 +73,16 @@ GEM
       json
       oauth2
       rest-client
+    fog (0.3.8)
+      builder
+      excon (>= 0.2.4)
+      formatador (>= 0.0.15)
+      json
+      mime-types
+      net-ssh (~> 2.0.23)
+      nokogiri (~> 1.4.3.1)
+      ruby-hmac
+    formatador (0.0.15)
     gem_plugin (0.2.3)
     haml (3.0.21)
     hashie (0.4.0)
@@ -98,6 +111,7 @@ GEM
       fastthread (>= 1.0.1)
       gem_plugin (>= 0.2.3)
     multi_json (0.0.4)
+    net-ssh (2.0.23)
     nokogiri (1.4.3.1)
     oa-core (0.1.4)
       rack (~> 1.1)
@@ -134,6 +148,7 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    rmagick (2.9.0)
     rspec (2.0.0)
       rspec-core (= 2.0.0)
       rspec-expectations (= 2.0.0)
@@ -146,6 +161,7 @@ GEM
       rspec-expectations (= 2.0.0)
     rspec-rails (2.0.1)
       rspec (~> 2.0.0)
+    ruby-hmac (0.4.0)
     sass (3.1.0.alpha.18)
     shoulda (2.11.3)
     thor (0.14.3)
@@ -167,15 +183,18 @@ PLATFORMS
 DEPENDENCIES
   bson (= 1.1)
   bson_ext (= 1.1)
+  carrierwave
   compass (>= 0.10.5)
   database_cleaner
   devise!
   fbgraph (= 0.1.6.4.1)
+  fog
   mini_fb
   mongoid (= 2.0.0.beta.19)
   mongrel
   oa-oauth
   rails (= 3.0.1)
+  rmagick (= 2.9.0)
   rspec-rails (~> 2.0.0)
   sass
   shoulda

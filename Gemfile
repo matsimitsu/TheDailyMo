@@ -19,6 +19,10 @@ gem "compass", ">= 0.10.5"
 gem 'twitter'
 gem 'mini_fb'
 
+gem 'rmagick', '2.9.0', :require => 'RMagick'
+gem 'carrierwave' # instead of paperclip (because of incompatilility with mongoid)
+gem 'fog'
+
 group :development do
   gem 'mongrel'
 end

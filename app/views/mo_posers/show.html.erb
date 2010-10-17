@@ -1,2 +1,97 @@
-<%= @mo_poser.connector %>
+<div class='modal-window'>
+  <h1>SnorrieFy je hoofd!</h1>
+
+  <div class='column'>
+    <h2>Kies je snor:</h2>
+    <ul id="snorren">
+      <li><%= image_tag 'snorren/snor_01.png', :class => 'new_snor', :name => 'snorren/snor_01.png' %></li>
+      <li><%= image_tag 'snorren/snor_02.png', :class => 'new_snor', :name => 'snorren/snor_02.png' %></li>
+      <li><%= image_tag 'snorren/snor_03.png', :class => 'new_snor', :name => 'snorren/snor_03.png' %></li>
+      <li><%= image_tag 'snorren/snor_04.png', :class => 'new_snor', :name => 'snorren/snor_04.png' %></li>
+      <li><%= image_tag 'snorren/snor_05.png', :class => 'new_snor', :name => 'snorren/snor_05.png' %></li>
+      <li><%= image_tag 'snorren/snor_06.png', :class => 'new_snor', :name => 'snorren/snor_06.png' %></li>
+      <li><%= image_tag 'snorren/snor_07.png', :class => 'new_snor', :name => 'snorren/snor_07.png' %></li>
+      <li><%= image_tag 'snorren/snor_08.png', :class => 'new_snor', :name => 'snorren/snor_08.png' %></li>
+      <li><%= image_tag 'snorren/snor_09.png', :class => 'new_snor', :name => 'snorren/snor_09.png' %></li>
+      <li><%= image_tag 'snorren/snor_10.png', :class => 'new_snor', :name => 'snorren/snor_10.png' %></li>
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2>Sleep je snor goed:</h2>
+    <div class='pic_container'><%= image_tag(@mo_poser.connector.profile_picture_url, :id => "profile_picture", :width => 200, :style => 'top: 0; right: 0; xposition: absolute') %><div id='snor'><%= image_tag('snorren/snor_01.png', :width => 200) %></div></div>
+  </div>
+
+  <div class="column last">
+    <h2>Klaar ermee?</h2>
+    <% form_for @mo_poser, :html => {:class => 'lightbox snorriefy'} do |f| -%>
+      <input type="hidden" name="rotation" id="rotation" value="0" width="100" />
+      <input type="hidden" name="position[x]" id="position_x" value="31"/>
+      <input type="hidden" name="position[y]" id="position_y" value="108"/>
+      <input type="hidden" name="size" id="size" value="69" width="100" />
+      <input type="hidden" name="img_src" id="img_src" value="snorren/snor_01.png"/>
+      <%= f.submit 'Ja, Ik ben klaar!', :class => 'lightbox shiny-button smaller' %>
+    <% end -%>
+  </div>
+
+</div>
+<script>
+  $(document).ready(function() {
+
+    $('img.new_snor').live('click', function() {
+      $('#snor img').attr('src', $(this).attr('src'))
+      $('#snor img').resizable('destroy')
+      $('#snor img').css('height', 'auto')
+      $('#img_src').val($(this).attr('name'))
+      initSnorriefy();
+    })
+
+    function logPosition () {
+      $('#position_y').val($("#snor").css('top').replace(/px$/, ''));
+      $('#position_x').val($("#snor").css('left').replace(/px$/, ''));
+    }
+
+    function initSnorriefy () {
+      $("#snor").draggable({
+        stop: function() {
+          logPosition();
+        }
+      });
+
+      $("#snor img").resizable({
+        handles: 'e, s, se, ne, sw, n, w',
+        // maxWidth: 400,
+        aspectRatio: true,
+        stop: function() {
+          // when resizing to the left and top unexpected thing happen, this counters that
+          var topDiff = ($('#snor').css('top').replace(/px$/, '') - 0) + ($(this).css('top').replace(/px$/, '') - 0);
+          $("#snor").css('top', topDiff + "px");
+          $(this).css('top', 0);
+          var leftDiff = ($('#snor').css('left').replace(/px$/, '') - 0) + ($(this).css('left').replace(/px$/, '') - 0);
+          $("#snor").css('left', leftDiff + "px");
+          $(this).css('left', 0);
+      
+          logPosition();
+          var currentWidth, parentWidth, scale;
+          currentWidth = $(this).css('width').replace(/px$/, '');
+          parentWidth = $(this).parent().css('width').replace(/px$/, '');
+          scale = Math.round(currentWidth/parentWidth * 100);
+          $('#size').val(scale);
+        }
+      });
+    }
+    setTimeout(function() {
+      initSnorriefy();
+    }, 500);
+
+    $('#snor img').load(function() {
+      setTimeout(function() {
+        initSnorriefy();
+      }, 500);
+    });
+
+  });
+</script>
+
 <pre><%= @mo_poser.to_yaml %>
+

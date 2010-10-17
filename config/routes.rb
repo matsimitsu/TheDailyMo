@@ -2,7 +2,12 @@ TheDailyMo::Application.routes.draw do
 
   devise_for :users
 
-  resources :mo_posers
+  resources :mo_posers do
+    member do
+      get 'confirm'
+      post 'upload'
+    end
+  end
 
   # The rack based omniauth is inserted before this.
   match '/auth/failure'           => "auth#failure"
