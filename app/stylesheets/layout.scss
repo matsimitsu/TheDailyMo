@@ -11,8 +11,8 @@ body > header { background: url('/images/banner_pattern.png') repeat-x 50% 77px 
     }
     nav { padding-top: 33px; height: 44px;
       ul { width: 470px; margin-left: auto; background-color: $nav-gray; overflow: hidden; @include border-top-radius(4px);
-        li { display: block; float: left; height: 44px; line-height: 44px; }
-        li.cta { background-color: $golden-beige; }
+        li { display: block; float: left; height: 44px; line-height: 44px; padding: 0 27px; }
+        li.cta { background-color: $golden-beige; @include border-top-radius(4px); float: right; }
       }
     }
     .countdown { position: absolute; top: 350px; left: $grid-margin; font-size: 25px;
