@@ -1,0 +1,6 @@
+<% form_for @mo_poser, :url => { :action => "upload" } do |f| %>
+Send it out!
+<%= f.label :message, "Message" %>
+<%= f.text_area :message %> 
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>

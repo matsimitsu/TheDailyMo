@@ -8,14 +8,14 @@ module DailyMo
         "https://graph.facebook.com/#{oauth_uid}/picture?type=large"
       end
 
-      def upload_profile_picture(message = default_message)
+      def upload_profile_picture(photo, message = default_message)
         # oauth_uid is default (public) profile album...
         begin
           c = Curl::Easy.new("https://graph.facebook.com/#{oauth_uid}/photos")
           c.multipart_form_post = true
           c.http_post(
-            Curl::PostField.file("file", photos.last.photo.to_file.path),
-            Curl::PostField.content('access_token', oauth_access_token),
+            Curl::PostField.file("file", photo.to_file.path),
+            Curl::PostField.content('access_token', oauth_token),
             Curl::PostField.content('message', message)
           )
           self.message = message

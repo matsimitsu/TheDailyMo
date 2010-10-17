@@ -9,6 +9,7 @@ class MoPoser
   field :full_name
   field :original_profile_pic_url
   field :permissions, :type => Hash
+  field :message
 
   field :photo_file_name
   field :photo_content_type

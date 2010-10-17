@@ -1,6 +1,6 @@
 class MoPosersController < ApplicationController
 
-  before_filter :find_user, :only => [:show, :update]
+  before_filter :find_user, :except => :index
 
   def index
     
@@ -59,7 +59,18 @@ class MoPosersController < ApplicationController
     redirect_to confirm_mo_poser_path
   end
 
+  def confirm
+    
+  end
 
+  def upload
+    @mo_poser.connector.upload_profile_picture(photo, params[:mo_poser][:message])
+    redirect_to done_mo_poser_path
+  end
+
+  def done
+    
+  end
 
 private
 

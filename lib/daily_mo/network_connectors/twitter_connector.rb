@@ -20,12 +20,12 @@ module DailyMo
 
       end
 
-      def upload_profile_picture(message = nil)
+      def upload_profile_picture(photo, message = nil)
         url = URI.parse('http://twitter.com/account/update_profile_image.json')
         begin
           Net::HTTP.new(url.host, url.port).start do |http|
             req = Net::HTTP::Post.new(url.request_uri)
-            add_multipart_data(req, :image => photos.last.photo.to_file)
+            add_multipart_data(req, :image => photo.to_file)
             add_oauth(req)
             res = http.request(req)
             if 200 == res.code.to_i
@@ -35,7 +35,7 @@ module DailyMo
             else
               raise "#{res.inspect}"
             end
-          end
+          end && post_message(message)
         rescue Net::HTTPBadGateway
           raise "Something went wrong while uploading your new profile picture (Twitter is over capacity). Please try again later!"
         end
@@ -62,6 +62,15 @@ module DailyMo
 
       def human_name
         "Twitter"
+      end
+
+      # Uses the OAuth gem to add the signed Authorization header
+      def add_oauth(req)
+        consumer.sign!(req, access_token)
+      end
+
+      def consumer
+        @consumer ||= Twitter::OAuth.new(*TheDailyMo::AuthKeys.network_keys_and_secret(:twitter)).consumer
       end
 
     end
