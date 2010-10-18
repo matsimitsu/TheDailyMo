@@ -60,16 +60,14 @@ class MoPosersController < ApplicationController
   end
 
   def confirm
-    
   end
 
   def upload
-    @mo_poser.connector.upload_profile_picture(photo, params[:mo_poser][:message])
+    @mo_poser.connector.upload_profile_picture(@mo_poser.photo, params[:mo_poser][:message])
     redirect_to done_mo_poser_path
   end
 
   def done
-    
   end
 
 private

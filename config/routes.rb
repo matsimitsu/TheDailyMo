@@ -4,7 +4,7 @@ TheDailyMo::Application.routes.draw do
 
   resources :mo_posers do
     member do
-      post 'upload'
+      put 'upload'
       get 'confirm'
       get 'done'
     end

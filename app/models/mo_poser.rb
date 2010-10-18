@@ -10,6 +10,7 @@ class MoPoser
   field :original_profile_pic_url
   field :permissions, :type => Hash
   field :message
+  field :message_link
 
   field :photo_file_name
   field :photo_content_type
@@ -23,7 +24,9 @@ class MoPoser
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :full_name, :original_profile_pic_url
+  attr_accessible :message, :message_link
   attr_accessible :oauth_provider, :oauth_uid, :oauth_token, :oauth_secret
+  attr_accessible :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at, :type => DateTime
 
   def self.setup_poser(auth_hash)
     poser = MoPoser.find(:first, :conditions => {:oauth_provider => auth_hash[:provider], :oauth_uid => auth_hash[:uid]})
