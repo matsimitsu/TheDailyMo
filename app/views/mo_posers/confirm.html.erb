@@ -1,6 +1,7 @@
+<%= image_tag @mo_poser.photo.url %>
 <% form_for @mo_poser, :url => upload_mo_poser_path do |f| %>
 Send it out!
 <%= f.label :message, "Message" %>
-<%= f.text_area :message %> 
+<%= f.text_area :message, :cols => 20, :rows => 3 %> 
 <%= f.submit "Submit", :disable_with => 'Submiting...' %>
 <% end %>
